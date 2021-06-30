@@ -4,7 +4,7 @@ with open("/Users/leonardcolin/code/AdventOfCode/day3/map.txt") as file:
     
     
 
-def number_of_trees(down_step, right_step):
+def number_of_trees(right_step, down_step):
     x, y = 0, 0
     trees_count = 0
     last_row = len(area) - 1
@@ -21,7 +21,15 @@ def number_of_trees(down_step, right_step):
     return trees_count
 
 # Part one:
-print("There is " + str(number_of_trees(1, 3)) + " trees")
+print("There is " + str(number_of_trees(3, 1)) + " trees")
+
+# Part two:
+first = number_of_trees(1, 1)
+second = first * number_of_trees(3, 1)
+third = second * number_of_trees(5, 1)
+fourth = third * number_of_trees(7, 1)
+fifth = fourth * number_of_trees(1, 2)
+print(fifth)
 
 
 
